@@ -10,7 +10,7 @@ async def get_clientes():
     return "World"
 
 
-@app.get("/bienes", response_model=str, operation_id="get_bienes")
+@app.get("/many_hello", response_model=List[str], operation_id="get_bienes")
 async def get_bienes(cant: Optional[str] = Query(None)):
     limit_value = 10 if cant == "" or cant is None else int(cant)
     lst=["world" for i in range(limit_value)]
